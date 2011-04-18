@@ -9,21 +9,21 @@
 
 class Sitemap extends Base_Controller 
 {
-	public function __construct()
-	{
-		parent::__construct();
-		$this->load->model('Sitemap_model', 'sitemap', true);
-	}
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Sitemap_model', 'sitemap', true);
+    }
 
-	function index()
-	{
-		$this->template['sitemap']      =   $this->sitemap->getPages();
-		
-		$this->output('sitemap');
-	}
-	
-	function user_guide()
-	{
-		$this->output('user-guide/index');
-	}
+    function index()
+    {
+        $this->template['sitemap']      =   $this->sitemap->getPages();
+        $this->sitemap->pagesXmlOutput();
+        $this->output('sitemap');
+    }
+
+    function user_guide()
+    {
+        $this->output('user-guide/index');
+    }
 }

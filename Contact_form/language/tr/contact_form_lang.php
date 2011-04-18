@@ -1,0 +1,22 @@
+<?php
+$lang['module_contact_form_first_name']			=	'<strong>Adınız</strong> ';
+$lang['module_contact_form_last_name']			=	'<strong>Soyadınız</strong> ';
+$lang['module_contact_form_email']				=	'<strong>E-Posta</strong> ';
+$lang['module_contact_form_subject']			=	'<strong>Konu</strong> ';
+$lang['module_contact_form_message']			=	'<strong>Mesaj</strong> ';
+$lang['module_contact_form_site_name']			=	'İletişim Formu | SİTENİZİN ADI';
+$lang['module_contact_form_have_message']		=	'İletişim Formundan Gelen 1 Mesajınız Var';
+$lang['module_contact_form_date_time']			=	'Tarih - Zaman';
+$lang['module_contact_form_sender']				=	'Gönderen';
+$lang['module_contact_form_char']				=	'Karakter';
+$lang['module_contact_form_required']			=	'Doldurulması zorunlu alan!...';
+$lang['module_contact_form_valid_e_mail']		=	'Adresiniz Yanlış, Lütfen E-Posta Adresinizi Kontrol Ediniz!...';
+$lang['module_contact_form_min_length']			=	'Lütfen Minimun Karakter Değerlerini Kontrol Ediniz!...';
+$lang['module_contact_form_max_length']			=	'Lütfen Maksimun Karakter Değerlerini Kontrol Ediniz!...';
+$lang['module_contact_form_send_success']		=	'Mesajınız başarıyla gönderildi...';
+$lang['module_contact_form_send_nsuccess']		=	'Teknik bir hatadan dolayı mesajınız <b>gönderilemedi</b>...';
+$lang['module_contact_form_send_me_a_copy']		=	'Banada Bir Kopya Gönder';
+$lang['module_contact_form_send_success']		=	'Mesaj gönderimi başarılı, ilginiz için teşekkür ederiz...';
+$lang['module_contact_form_redirecting']		=	'Yönlendiriliyorsunuz';
+$lang['module_contact_form_redirecting_info']	=	' saniye içerisinde yönlendirileceksiniz';
+$lang['module_contact_form_do_not_wait']		=	'Beklemek istemiyorsanız buraya tıklayın.';

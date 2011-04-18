@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>Contact Form</name>
+	<description>Contact Form | UKYO</description>
+	<uri_segment>contact_form</uri_segment>
+	<has_admin>false</has_admin>
+</module>

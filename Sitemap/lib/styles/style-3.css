@@ -1,0 +1,57 @@
+/*
+	Sitemap Styler 	 
+*/
+
+#sitemap, #sitemap ul, #sitemap li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#sitemap{}
+#sitemap li{
+	line-height:200%;
+	margin-right:1px;
+	background:#eee;
+	position:relative;
+	width:120px;
+	float:left;
+}
+#sitemap li a{padding-left:20px;}
+#sitemap li span{float:left;position:absolute;top:5px;left:2px;width:13px;height:13px;cursor:auto;font-size:0;}
+#sitemap li span, #sitemap li span.collapsed{background:url(../images/collapsed-3.gif) no-repeat 0 0;} 
+#sitemap li span.expanded{background:url(../images/expanded-2.gif) no-repeat 0 0;}
+
+/* second level */
+
+#sitemap li li{
+	clear:both;
+	width:100%;
+	background:#fcfcfc;
+	margin-right:0;
+	margin-bottom:1px;
+}
+#sitemap li li span, #sitemap li li span.collapsed{background:url(../images/collapsed-3.gif) no-repeat 0 0;} 
+#sitemap li li span.expanded{background:url(../images/expanded-3.gif) no-repeat 0 0;}
+
+/* third level */
+
+#sitemap li li li{
+	background:#fff;
+}
+#sitemap li li li a{color:#999;font-size:90%;}
+
+/* float fix */
+
+#sitemap:after, #sitemap ul:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+#sitemap, #sitemap ul{display:block;}
+/*  \*/
+#sitemap, #sitemap ul{min-height:1%;}
+* html #sitemap, * html #sitemap ul{height:1%;}
+ /*  */
+#sitemap ul{display:none;}

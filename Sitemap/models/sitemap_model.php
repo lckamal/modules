@@ -119,12 +119,14 @@ class Sitemap_model extends Base_model
                         $xmlWr      .=  $xml->startElement('changefreq');
                             $xmlWr      .=  $xml->text(config_item('changefreq'));
                         $xmlWr      .=  $xml->endElement();// end changefreq element
-                        //$xmlWr      .=  $xml->startElement('priority');
-                            //$xmlWr      .=  $xml->text(config_item('priority'));
-                        //$xmlWr      .=  $xml->endElement();// end priority element
-                        //$xmlWr      .=  $xml->startElement('lastmod');
-                            //$xmlWr      .=  $xml->text(config_item('lastmod'));
-                        //$xmlWr      .=  $xml->endElement();// end lastmod element
+						$xmlWr      .=  $xml->startElement('priority');
+							$lev = $page['level'] == 0 ? $lev = 1 : 0.8; //too simple priority
+							$xmlWr      .=  $xml->text($lev);
+						$xmlWr      .=  $xml->endElement();// end priority element
+						$xmlWr      .=  $xml->startElement('lastmod');
+							$d	 = explode(" ", $page['updated']);
+							$xmlWr      .=  $xml->text($d[0]."T".$d[1]."+0000"); // check article/page date
+						$xmlWr      .=  $xml->endElement();// end lastmod element
                     $xmlWr      .=  $xml->endElement();// end url element
 
 

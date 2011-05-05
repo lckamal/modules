@@ -84,19 +84,19 @@
                 </tr>
                 <tfoot>		
                     <th>
-                        <a href="eventcalendar/index/<?= $previous_year ?>" title="<?= $previous_year_text ?>">&laquo;&laquo;</a>
+                        <a href="<?= base_url() ?>eventcalendar/index/<?= $previous_year ?>" title="<?= $previous_year_text ?>">&laquo;&laquo;</a>
                     </th>
                     <th>
-                        <a href="eventcalendar/index/<?= $previous_month ?>" title="<?= $previous_month_text ?>">&laquo;</a>
+                        <a href="<?= base_url() ?>eventcalendar/index/<?= $previous_month ?>" title="<?= $previous_month_text ?>">&laquo;</a>
                     </th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                     <th>
-                        <a href="eventcalendar/index/<?= $next_month ?>" title="<?= $next_month_text ?>">&raquo;</a>
+                        <a href="<?= base_url() ?>eventcalendar/index/<?= $next_month ?>" title="<?= $next_month_text ?>">&raquo;</a>
                     </th>
                     <th>
-                        <a href="eventcalendar/index/<?= $next_year ?>" title="<?= $next_year_text ?>">&raquo;&raquo;</a>
+                        <a href="<?= base_url() ?>eventcalendar/index/<?= $next_year ?>" title="<?= $next_year_text ?>">&raquo;&raquo;</a>
                     </th>		
                 </tfoot>
             </table>

@@ -14,13 +14,31 @@
                             <input id="name" name="event_name" class="inputtext required" type="text" value="" />
                         </dd>
                     </dl>
-                    <!-- Event Date -->
+                    <!-- URL -->
                     <dl class="small">
                         <dt>
-                            <label for="event_date"><?=lang('module_eventcalendar_event_date')?></label>
+                            <label for="url"><?=lang('ionize_label_url')?></label>
                         </dt>
                         <dd>
-                            <input id="name" name="event_date" class="inputtext required w120 date" type="text" value="" />
+                            <input id="url" name="url" class="inputtext required" type="text" value="" />
+                        </dd>
+                    </dl>
+                    <!-- Event Start Date -->
+                    <dl class="small">
+                        <dt>
+                            <label for="event_start_date"><?=lang('module_eventcalendar_event_start_date')?></label>
+                        </dt>
+                        <dd>
+                            <input id="event_start_date" name="event_start_date" class="inputtext required w120 date" type="text" value="" />
+                        </dd>
+                    </dl>
+                    <!-- Event End Date -->
+                    <dl class="small">
+                        <dt>
+                            <label for="event_end_date"><?=lang('module_eventcalendar_event_end_date')?></label>
+                        </dt>
+                        <dd>
+                            <input id="event_end_date" name="event_end_date" class="inputtext required w120 date" type="text" value="" />
                         </dd>
                     </dl>
                     <fieldset id="blocks">
@@ -84,7 +102,8 @@
                         <tr>
                             <th><?= lang('ionize_label_id') ?></th>
                             <th><?= lang('module_eventcalendar_event_name') ?></th>
-                            <th axis="string"><?= lang('module_eventcalendar_event_date') ?></th>
+                            <th axis="string"><?= lang('module_eventcalendar_event_start_date') ?></th>
+                            <th axis="string"><?= lang('module_eventcalendar_event_end_date') ?></th>
                             <th axis="string"><?= lang('ionize_label_author') ?></th>
                             <th axis="string"><?= lang('ionize_label_created') ?></th>
                             <th axis="string"><?= lang('ionize_label_updater') ?></th>
@@ -102,7 +121,10 @@
                                 <?= $event['name'] ?>
                             </td>
                             <td>
-                                <?= $event['datetime'] ?>
+                                <?= $event['start_date'] ?>
+                            </td>
+                            <td>
+                                <?= $event['end_date'] ?>
                             </td>
                             <td>
                                 <?= $event['author'] ?>

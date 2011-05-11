@@ -9,10 +9,6 @@ class Eventcalendar_model extends Base_model
         $this->table =		'eventcalendar_module';
         $this->pk_name 	=	'id_event';
         $this->lang_table =     'eventcalendar_module_lang';
-        //$this->set_table('eventcalendar_module');
-        //$this->set_pk_name('id_event');
-        //$this->set_lang_table('eventcalendar_module_lang');
-
     }
     
     /*
@@ -79,29 +75,13 @@ class Eventcalendar_model extends Base_model
         return;
     }
     
-    function getEventsToCalendar($time){
-		       
-        $today              =   date("Y/n/j", time());
-        $currentMonth       =   date("n", $time);
-        $currentYear        =   date("Y", $time);
-        $currentMonthText   =   date("F Y", $time);
-        $currentMonthDays   =   date("t", $time);
-        
-        $events     =   array();
-
-        $query = $this->db->query("
-        SELECT DATE_FORMAT(datetime,'%d') AS day,
-        id_event
-        FROM eventcalendar_module 
-        WHERE datetime BETWEEN  '$currentYear/$currentMonth/01' 
-                                        AND '$currentYear/$currentMonth/$currentMonthDays'");
-
-        foreach ($query->result() as $row_event)
-        {					
-                $events[intval($row_event->day)][]  =   $row_event;
+    /*
+     * This Will Check Translation For Events
+     */
+    function _checkLangs($eventID)
+    {
+        foreach(Settings::get_languages() as $l){
+            
         }
-        $query->free_result();
-
-        return $events;						
     }
 }

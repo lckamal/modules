@@ -91,6 +91,16 @@ td#today:hover {
 	font-weight: bold;
 	color: #222;
 }
+.events li span.subtitle {
+        font-size: 10px;
+	font-weight: bold;
+	color: #222;
+}
+.events li span.description {
+        font-size: 10px;
+	font-weight: normal;
+	color: #222;
+}
 
 th a{
 text-decoration:none;

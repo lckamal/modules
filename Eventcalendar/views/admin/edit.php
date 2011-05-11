@@ -15,15 +15,33 @@
                 <input id="event_name" name="event_name" class="inputtext required" type="text" value="<?= $name ?>" />
             </dd>
 	</dl>
-        <!-- Event Date -->
-	<dl class="small">
+        <!-- URL -->
+        <dl class="small">
             <dt>
-                <label for="event_date"><?=lang('module_eventcalendar_event_date')?></label>
+                <label for="url"><?=lang('ionize_label_url')?></label>
             </dt>
             <dd>
-                <input id="event_date" name="event_date" class="inputtext required w120 date" type="text" value="<?= humanize_mdate($datetime, Settings::get('date_format'). ' %H:%m:%s') ?>" />
+                <input id="url" name="url" class="inputtext required" type="text" value="<?= $url ?>" />
             </dd>
-	</dl>
+        </dl>
+        <!-- Event Start Date -->
+        <dl class="small">
+            <dt>
+                <label for="event_start_date"><?=lang('module_eventcalendar_event_start_date')?></label>
+            </dt>
+            <dd>
+                <input id="event_start_date" name="event_start_date" class="inputtext required w120 date" type="text" value="<?= humanize_mdate($start_date, Settings::get('date_format'). ' %H:%m:%s') ?>" />
+            </dd>
+        </dl>
+        <!-- Event End Date -->
+        <dl class="small">
+            <dt>
+                <label for="event_end_date"><?=lang('module_eventcalendar_event_end_date')?></label>
+            </dt>
+            <dd>
+                <input id="event_end_date" name="event_end_date" class="inputtext required w120 date" type="text" value="<?= humanize_mdate($end_date, Settings::get('date_format'). ' %H:%m:%s') ?>" />
+            </dd>
+        </dl>
 	<fieldset id="blocks">
             <!-- Tabs -->
             <div id="eventTab<?= $event['id_event'] ?>" class="mainTabs">

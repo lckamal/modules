@@ -18,15 +18,18 @@ class Eventcalendar extends Module_Admin
         
         if(empty($eventID))
         {
-            if($this->input->post('event_name') != '' AND $this->input->post('event_date') != '')
+            if($this->input->post('event_name') != '' AND $this->input->post('event_start_date') != '')
             {
                 $user = $this->connect->get_current_user();
 
-                $datetime  = ($this->input->post('event_date')) ? getMysqlDatetime($this->input->post('event_date')) : '0000-00-00';
+                $start_date = ($this->input->post('event_start_date')) ? getMysqlDatetime($this->input->post('event_start_date')) : '0000-00-00';
+                $end_date   = ($this->input->post('event_end_date')) ? getMysqlDatetime($this->input->post('event_end_date')) : '0000-00-00';
 
                 $data   =   array(
                     'name'      =>  $this->input->post('event_name'),
-                    'datetime'  =>  $datetime,
+                    'url'       =>  $this->input->post('url'),
+                    'start_date'=>  $start_date,
+                    'end_date'  =>  $end_date,
                     'author'    =>  $user['screen_name'],
                     'created'   =>  date('Y-m-d H:i:s')
                 );
@@ -72,15 +75,18 @@ class Eventcalendar extends Module_Admin
         }
         else
         {
-            if($this->input->post('event_name') != '' AND $this->input->post('event_date') != '')
+            if($this->input->post('event_name') != '' AND $this->input->post('event_start_date') != '')
             {
                 $user = $this->connect->get_current_user();
 
-                $datetime  = ($this->input->post('event_date')) ? getMysqlDatetime($this->input->post('event_date')) : '0000-00-00';
+                $start_date = ($this->input->post('event_start_date')) ? getMysqlDatetime($this->input->post('event_start_date')) : '0000-00-00';
+                $end_date   = ($this->input->post('event_end_date')) ? getMysqlDatetime($this->input->post('event_end_date')) : '0000-00-00';
                 
                 $data   =   array(
                     'name'      =>  $this->input->post('event_name'),
-                    'datetime'  =>  $datetime,
+                    'url'       =>  $this->input->post('url'),
+                    'start_date'=>  $start_date,
+                    'end_date'  =>  $end_date,
                     'updater'   =>  $user['screen_name'],
                     'updated'   =>  date('Y-m-d H:i:s')
                 );
@@ -128,9 +134,11 @@ class Eventcalendar extends Module_Admin
     
     function update($eventID)
     {
-        $this->eventcalendar->feed_template($eventID, $this->template);
-        $this->eventcalendar->feed_lang_template($eventID, $this->template);
-        
+            $this->eventcalendar->feed_template($eventID, $this->template);
+            $this->eventcalendar->feed_lang_template($eventID, $this->template);
+            
+            $this->eventcalendar->_checkLangs($eventID);
+            
         $this->template['event']   =   $this->eventcalendar->getEvent($eventID);
         
         $this->output('admin/edit');
